@@ -12,38 +12,19 @@
             "https://jsonplaceholder.typicode.com/albums",
         ];
 
-        url = "tbrgvw";
+        url = "https://jsonplaceholder.typicode.com/users";
 
-        // async function fun(){
-        //     try{
-        //             let response = await fetch(url);
-        //             console.log("Fetched!");
-        //             let json = await response.json();
-        //             console.log("Work done!")
-
-        //     }
-        //     catch(error){
-        //         console.log("oooooops!");
-        //     }
-
-        // }
-
-        // fun();
-
-        // function check(){
-            
-        //     if(url != urls)
-        //         return url;
-        // }
-
-        urls.forEach(async (url) => {
+        urls.forEach(async function fun(url) {
             try {
-            const result = await fetch(url);
-            console.log("Fetched");
-            } catch (error) {
-                console.log('WHOOOPS');
+            const res = await fetch(url);
+            console.log("Fetched!");
+            } 
+            catch (error) {
+                console.log("ooooops!");
             }
         });
+
+        fun();
     </script>
 </head>
 <body>
