@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const urls = [
+        "https://jsonplaceholder.typicode.com/users",
+        "https://jsonplaceholder.typicode.com/posts",
+        "https://jsonplaceholder.typicode.com/albums",
+        ];
+    
+        const url = "https://jsonplaceholder.typicode.com/users/";
+
+        async function fun() {
+            const [users, posts, albums] = await Promise.all(
+                urls.map( async (url) => {
+                    
+                    let response = await fetch(url);
+                    console.log("Fetched!")
+                    
+                    let json = await response.json();
+                    console.log("Work done")
+                }),
+            );
+            console.log("users", users);
+            console.log("posts", posts);
+            console.log("albums", albums);
+        };
+
+        fun();
+
+    </script>
+</head>
+<body>
+</body>
+</html>

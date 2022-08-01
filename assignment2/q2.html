@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    
+</head>
+<body>
+    <p>Succes will be displayed in 4 seconds : -</p>
+    <h3 id="display"></h3>
+
+    <script>
+        let x = document.getElementById("display");
+        const myPromise = new Promise((resolve, reject) => {
+          setTimeout(() => {
+            resolve(x.textContent = "Success");
+          }, 4000);
+        });
+        
+    </script>
+    
+</body>
+</html>
